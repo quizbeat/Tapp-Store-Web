@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Publication Requests</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>App</th>
+      <th>Moderator</th>
+      <th>Status</th>
+      <th>Request date</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @publication_requests.each do |publication_request| %>
+      <tr>
+        <td><%= publication_request.application %></td>
+        <td><%= publication_request.moderator %></td>
+        <td><%= publication_request.status %></td>
+        <td><%= publication_request.request_date %></td>
+        <td><%= link_to 'Show', publication_request %></td>
+        <td><%= link_to 'Edit', edit_publication_request_path(publication_request) %></td>
+        <td><%= link_to 'Destroy', publication_request, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Publication request', new_publication_request_path %>

@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>App:</strong>
+  <%= @download.app %>
+</p>
+
+<p>
+  <strong>Person:</strong>
+  <%= @download.person %>
+</p>
+
+<p>
+  <strong>Download date:</strong>
+  <%= @download.download_date %>
+</p>
+
+<%= link_to 'Edit', edit_download_path(@download) %> |
+<%= link_to 'Back', downloads_path %>

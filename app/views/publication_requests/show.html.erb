@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>App:</strong>
+  <%= @publication_request.app %>
+</p>
+
+<p>
+  <strong>Moderator:</strong>
+  <%= @publication_request.moderator %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @publication_request.status %>
+</p>
+
+<p>
+  <strong>Request date:</strong>
+  <%= @publication_request.request_date %>
+</p>
+
+<%= link_to 'Edit', edit_publication_request_path(@publication_request) %> |
+<%= link_to 'Back', publication_requests_path %>

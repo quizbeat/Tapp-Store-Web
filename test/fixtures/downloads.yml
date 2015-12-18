@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  app_id: 
+  person_id: 
+  download_date: 2015-12-19 01:07:04
+
+two:
+  app_id: 
+  person_id: 
+  download_date: 2015-12-19 01:07:04

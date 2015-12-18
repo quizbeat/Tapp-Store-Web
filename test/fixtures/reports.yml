@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  reason: MyString
+  description: MyString
+  app_id: 
+  status: MyString
+  person_id: 
+  moderator_id: 
+
+two:
+  reason: MyString
+  description: MyString
+  app_id: 
+  status: MyString
+  person_id: 
+  moderator_id: 
