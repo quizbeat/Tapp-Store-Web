@@ -2,6 +2,21 @@
 
 <h1>Listing Reports</h1>
 
+Filter reports by reason
+<%= form_tag(reports_path, :method => "get", id: "search-form") do %>
+<%= text_field_tag :search, params[:search], placeholder: "Enter reason" %>
+<%= submit_tag "Filter" %>
+<% end %>
+
+<% if false %>
+<% if @posts.present? %>
+  <%= render @reports %>
+<% else %>
+  <p>There are no posts containing the term(s) <%= params[:search] %>.</p>
+<% end %>
+<% end %>
+
+
 <table>
   <thead>
     <tr>
@@ -18,11 +33,13 @@
   <tbody>
     <% @reports.each do |report| %>
       <tr>
+        <% app = Application.find(report.app_id) %>
+        <% author = Person.find(report.person) %>
         <td><%= report.reason %></td>
         <td><%= report.description %></td>
-        <td><%= report.app %></td>
+        <td><%= app.app_name %></td>
         <td><%= report.status %></td>
-        <td><%= report.person %></td>
+        <td><%= "#{author.first_name} #{author.last_name}" %></td>
         <td><%= report.moderator %></td>
         <td><%= link_to 'Show', report %></td>
         <td><%= link_to 'Edit', edit_report_path(report) %></td>

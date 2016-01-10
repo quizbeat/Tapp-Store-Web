@@ -5,7 +5,9 @@
 <table>
   <thead>
     <tr>
-      <th>App</th>
+      <th>App id</th>
+      <th>App name</th>
+      <th>Developer</th>
       <th>Moderator</th>
       <th>Status</th>
       <th>Request date</th>
@@ -16,7 +18,11 @@
   <tbody>
     <% @publication_requests.each do |publication_request| %>
       <tr>
-        <td><%= publication_request.application %></td>
+        <% app = Application.find(publication_request.app_id) %>
+        <% dev = Person.find(app.developer) %>
+        <td><%= publication_request.app_id %></td>
+        <td><%= app.app_name %></td>
+        <td><%= "#{dev.first_name} #{dev.last_name}" %></td>
         <td><%= publication_request.moderator %></td>
         <td><%= publication_request.status %></td>
         <td><%= publication_request.request_date %></td>

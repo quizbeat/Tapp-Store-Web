@@ -5,6 +5,7 @@
 <table>
   <thead>
     <tr>
+      <th>Moderator</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -12,6 +13,8 @@
   <tbody>
     <% @moderators.each do |moderator| %>
       <tr>
+        <% person = Person.find(moderator.person_id) %>
+        <td><%= "#{person.first_name} #{person.last_name}" %></td>
         <td><%= link_to 'Show', moderator %></td>
         <td><%= link_to 'Edit', edit_moderator_path(moderator) %></td>
         <td><%= link_to 'Destroy', moderator, method: :delete, data: { confirm: 'Are you sure?' } %></td>

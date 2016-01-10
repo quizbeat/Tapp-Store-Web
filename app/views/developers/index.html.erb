@@ -5,6 +5,7 @@
 <table>
   <thead>
     <tr>
+      <th>Developer</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -12,6 +13,8 @@
   <tbody>
     <% @developers.each do |developer| %>
       <tr>
+        <% person = Person.find(developer.person_id) %>
+        <td><%= "#{person.first_name} #{person.last_name}" %></td>
         <td><%= link_to 'Show', developer %></td>
         <td><%= link_to 'Edit', edit_developer_path(developer) %></td>
         <td><%= link_to 'Destroy', developer, method: :delete, data: { confirm: 'Are you sure?' } %></td>

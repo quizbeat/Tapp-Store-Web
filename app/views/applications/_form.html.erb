@@ -21,7 +21,7 @@
   </div>
   <div class="field">
     <%= f.label :category_id %><br>
-    <%= f.text_field :category_id %>
+    <%= f.collection_select(:category_id, Category.all, :category_id, :category_name) %>
   </div>
   <div class="field">
     <%= f.label :price %><br>
@@ -36,12 +36,8 @@
     <%= f.text_field :app_size %>
   </div>
   <div class="field">
-    <%= f.label :status %><br>
-    <%= f.text_field :status %>
-  </div>
-  <div class="field">
     <%= f.label :developer_id %><br>
-    <%= f.text_field :developer_id %>
+    <%= f.collection_select(:developer_id, Developer.all, :person_id, :person_id) %>
   </div>
   <div class="actions">
     <%= f.submit %>

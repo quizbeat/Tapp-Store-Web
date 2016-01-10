@@ -21,19 +21,11 @@
   </div>
   <div class="field">
     <%= f.label :app_id %><br>
-    <%= f.text_field :app_id %>
-  </div>
-  <div class="field">
-    <%= f.label :status %><br>
-    <%= f.text_field :status %>
+    <%= f.collection_select(:app_id, Application.all, :app_id, :app_name) %>
   </div>
   <div class="field">
     <%= f.label :person_id %><br>
     <%= f.text_field :person_id %>
-  </div>
-  <div class="field">
-    <%= f.label :moderator_id %><br>
-    <%= f.text_field :moderator_id %>
   </div>
   <div class="actions">
     <%= f.submit %>

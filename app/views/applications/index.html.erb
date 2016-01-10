@@ -20,14 +20,16 @@
   <tbody>
     <% @applications.each do |application| %>
       <tr>
+        <% category = Category.find(application.category) %>
+        <% developer = Person.find(application.developer) %>
         <td><%= application.app_name %></td>
         <td><%= application.description %></td>
-        <td><%= application.category %></td>
+        <td><%= category.category_name %></td>
         <td><%= application.price %></td>
         <td><%= application.app_version %></td>
         <td><%= application.app_size %></td>
         <td><%= application.status %></td>
-        <td><%= application.developer %></td>
+        <td><%= "#{developer.first_name} #{developer.last_name}" %></td>
         <td><%= link_to 'Show', application %></td>
         <td><%= link_to 'Edit', edit_application_path(application) %></td>
         <td><%= link_to 'Destroy', application, method: :delete, data: { confirm: 'Are you sure?' } %></td>
